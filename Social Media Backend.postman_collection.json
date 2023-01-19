@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "a9580c07-8d7a-429d-87fc-e96e649601c4",
+		"name": "Social Media Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16747513"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Authenticating User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"pinakin4@gmail.com\",\n    \"password\":\"Pinakin@5\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{route}}/authenticate",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creating User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"pinakin4@gmail.com\",\n    \"password\":\"Pinakin@5\",\n    \"name\":\"Preet Viradiya\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{route}}/user",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Information",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmFraW40QGdtYWlsLmNvbSIsImlhdCI6MTY3NDExODY2Mn0.SVRgNc-5FJgsvyjIIrG7M-59T-GkxJ8bYHQpOMjdc78",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{route}}/user",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Followers",
+			"item": [
+				{
+					"name": "Follow User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmFraW40QGdtYWlsLmNvbSIsImlhdCI6MTY3NDExODY2Mn0.SVRgNc-5FJgsvyjIIrG7M-59T-GkxJ8bYHQpOMjdc78",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{route}}/follow/63c90a4024b9bd0259d48afa",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"follow",
+								"63c90a4024b9bd0259d48afa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmFraW40QGdtYWlsLmNvbSIsImlhdCI6MTY3NDExODY2Mn0.SVRgNc-5FJgsvyjIIrG7M-59T-GkxJ8bYHQpOMjdc78",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{route}}/unfollow/63c90a4024b9bd0259d48afa",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"unfollow",
+								"63c90a4024b9bd0259d48afa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmFraW40QGdtYWlsLmNvbSIsImlhdCI6MTY3NDEzMTIwN30.m3TBWS9HFvsj4Hx7XPfA-FKyFMONHMHedqpNbDZOutU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Hello World\",\n    \"description\":\"First Post ever\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{route}}/posts",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmFraW40QGdtYWlsLmNvbSIsImlhdCI6MTY3NDEzMTIwN30.m3TBWS9HFvsj4Hx7XPfA-FKyFMONHMHedqpNbDZOutU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{route}}/posts/63c9381fc0bb9249b8bcb5a4",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"posts",
+								"63c9381fc0bb9249b8bcb5a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmFraW40QGdtYWlsLmNvbSIsImlhdCI6MTY3NDEzMTIwN30.m3TBWS9HFvsj4Hx7XPfA-FKyFMONHMHedqpNbDZOutU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{route}}/posts/63c938a7a18e18c4566f4393",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"posts",
+								"63c938a7a18e18c4566f4393"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmFraW40QGdtYWlsLmNvbSIsImlhdCI6MTY3NDEzMTIwN30.m3TBWS9HFvsj4Hx7XPfA-FKyFMONHMHedqpNbDZOutU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{route}}/posts",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Create Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmFraW40QGdtYWlsLmNvbSIsImlhdCI6MTY3NDEzMTIwN30.m3TBWS9HFvsj4Hx7XPfA-FKyFMONHMHedqpNbDZOutU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\":\"great postttt\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{route}}/comment/63c938a7a18e18c4566f4393",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"comment",
+								"63c938a7a18e18c4566f4393"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Likes",
+			"item": [
+				{
+					"name": "Like",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmFraW40QGdtYWlsLmNvbSIsImlhdCI6MTY3NDEzMTIwN30.m3TBWS9HFvsj4Hx7XPfA-FKyFMONHMHedqpNbDZOutU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{route}}/like/63c938a7a18e18c4566f4393",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"like",
+								"63c938a7a18e18c4566f4393"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unlike",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpbmFraW40QGdtYWlsLmNvbSIsImlhdCI6MTY3NDEzMTIwN30.m3TBWS9HFvsj4Hx7XPfA-FKyFMONHMHedqpNbDZOutU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{route}}/unlike/63c938a7a18e18c4566f4393",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"unlike",
+								"63c938a7a18e18c4566f4393"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "route",
+			"value": "localhost:3000/api"
+		}
+	]
+}
